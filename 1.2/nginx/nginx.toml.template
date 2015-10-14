@@ -1,0 +1,12 @@
+[template]
+src = "nginx.conf.template"
+dest = "/etc/nginx/nginx.conf"
+
+# The key below must be changed to match how the service is named in 
+# the StackEngine CAC. Because `confd` does not yet allow dynamic 
+# keys in these TOML files we front the start with a script and substitute 
+# here.  (see confd/confd.sh)
+keys = [
+"SE_BACKEND_KEY"
+]
+reload_cmd = "supervisorctl reload nginx"
