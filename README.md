@@ -15,6 +15,10 @@ containers (e.g.
 [apache-backend-eg](http://github.com/stackhub/apache-backend-eg)) or a 
 golang binary that servers and http api.  
 
+The container checks every 5 seconds for new services at its serivce key
+in the StackEngine Service Discovery layer. When it sees a change, 
+it rewrites the haproxy.cfg file and reloads the haproxy service. 
+
 # Usage
 
 For example usage, please see the 
