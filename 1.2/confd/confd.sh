@@ -7,4 +7,4 @@
 sed s#STACKENGINE_BACKEND_KEY#$STACKENGINE_BACKEND_KEY# /etc/confd/conf.d/nginx.toml.template > /etc/confd/conf.d/nginx.toml
 
 # Okay now we can run confd 
-exec /usr/bin/confd -backend stackengine -node $STACKENGINE_LEADER_IP:8443 -scheme https -auth-token $STACKENGINE_API_TOKEN -interval 5
+exec /usr/bin/confd -backend stackengine -node $STACKENGINE_LEADER_IP:3000 -scheme http -auth-token $STACKENGINE_API_TOKEN -interval 5
